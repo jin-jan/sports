@@ -1,21 +1,32 @@
+{% load static %}
 <html>
   <head>
     <title>Beach Volleyball Jalisco</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/tournament.css' %}">
   </head>
   <body>
-    <div>
-      <h1>Beach Volleyball Jalisco</h1>
+    <div class="page-header">
+      <h1><a href="/">Beach Volleyball Jalisco</a></h1>
     </div>
-
-  {% for tour in tours %}
-    <div>
-      <p>date: {{tour.date}}</p>
-      <h2><a href="">{{tour.name}}</a></h2>
+  <div class="content container">
+    <div class="row">
+      <div class="col-md-8">
+         {% for tour in tours %}
+            <div class="tour">
+              <div class="event_date">
+                  <h2><a href="">{{tour.name}}</a></h2>
+                  <p>Date: {{tour.event_date}}</p>
+                  <div class="location">
+                      <p>Location: {{tour.location}}</p>
+                  </div>
+              </div>
+          {% endfor %}
     </div>
-  {% endfor %}
-    <div>
-      <h2><a href="">Sinaloa Tournament</a></h2>
-      <p>Date: May 13 2019</p>
-    </div>
+   </div>
+   </div>
 </body>
 </html>

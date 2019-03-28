@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Tournament(models.Model):
     name = models.CharField(max_length=200)
-    date = models.CharField(max_length=200)
+    event_date = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
 
     def publish(self):
