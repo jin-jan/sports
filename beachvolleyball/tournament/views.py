@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def tournament_list(request):
+    return render(request, 'tournament/tournament_list.html', {})
