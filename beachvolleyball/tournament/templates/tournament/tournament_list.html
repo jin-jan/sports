@@ -7,10 +7,12 @@
       <h1>Beach Volleyball Jalisco</h1>
     </div>
 
+  {% for tour in tours %}
     <div>
-      <h2><a href="">1st Tournament</a></h2>
-      <p>Date: April 13 2019</p>
+      <p>date: {{tour.date}}</p>
+      <h2><a href="">{{tour.name}}</a></h2>
     </div>
+  {% endfor %}
     <div>
       <h2><a href="">Sinaloa Tournament</a></h2>
       <p>Date: May 13 2019</p>
