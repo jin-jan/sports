@@ -12,15 +12,15 @@ services:
       - postgres_data_dev:/var/lib/postgresql/postgres_data
       - postgres_backup_dev:/backups
 
-django:
-  init: true
-  build:
-    context: .
-    dockerfile: ./docker/django/Dockerfile
-  depends_on:
-    - postgres
-  env_file: ./.docker-env
-  ports:
-    - "8000:8000"
-  volumes:
-    - ./beachvolleyball:/app
+  django:
+    init: true
+    build:
+      context: .
+      dockerfile: ./docker/django/Dockerfile
+    depends_on:
+      - postgres
+    env_file: ./.docker-env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./beachvolleyball:/app
