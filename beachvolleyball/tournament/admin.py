@@ -1,4 +1,8 @@
 from django.contrib import admin
 from .models import Tournament
 
-admin.site.register(Tournament)
+@admin.register(Tournament)
+class TournamentAdmin(admin.ModelAdmin):
+
+    list_display = ("name", "slug", "event_date")
+    prepopulated_fields = {"slug": ("name",)}

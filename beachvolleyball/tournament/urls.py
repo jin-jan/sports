@@ -1,6 +1,14 @@
 from django.urls import path
-from . import views
+from .views import (
+    TournamentApiList,
+    TournamentApiDetail,
+)
 
 urlpatterns = [
-    path('', views.tournament_list, name='tournament_list'),
+    path('', TournamentApiList.as_view(), name='api-tour-list'),
+    path(
+        "tour/<str:slug>/",
+        TournamentApiDetail.as_view(),
+        name='api-tour-detail',
+        ),
 ]

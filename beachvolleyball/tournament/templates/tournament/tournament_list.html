@@ -3,12 +3,13 @@
 {% block content %}
   {% for tour in tours %}
     <div class="tour">
-        <div class="event_date">
-            <h2><a href="">{{tour.name}}</a></h2>
-            <p>Date: {{tour.event_date}}</p>
-              <div class="location">
-                  <p>Location: {{tour.location}}</p>
-              </div>
-            </div>
+      <h2><a href="{% url 'tournament_detail' slug=tournament.slug %}">{{tour.name}}</a></h2>
+          <div class="event_date">
+            <p>Fecha: {{tour.event_date}}</p>
+          </div>
+          <div class="location">
+            <p>Lugar: {{tour.city}}</p>
+          </div>
+    </div>
 {% endfor %}
 {% endblock %}
