@@ -4,6 +4,7 @@ from django.db.models import (
     DateField,
     Model,
 )
+from django.urls import reverse
 from django_extensions.db.fields import AutoSlugField
 from django.utils import timezone
 
@@ -26,3 +27,9 @@ class Tournament(Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse(
+            "tour_detail",
+            kwargs={"slug":self.slug}
+        )

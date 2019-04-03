@@ -1,14 +1,12 @@
+"""URL paths for Tournament App"""
 from django.urls import path
+
 from .views import (
-    TournamentApiList,
-    TournamentApiDetail,
+    TourDetail,
+    TourList,
 )
 
 urlpatterns = [
-    path('', TournamentApiList.as_view(), name='api-tour-list'),
-    path(
-        "tour/<str:slug>/",
-        TournamentApiDetail.as_view(),
-        name='api-tour-detail',
-        ),
+    path("", TourList.as_view(), name="tour_list"),
+    path("tour/<str:slug>/", TourDetail.as_view(), name="tour_detail"),
 ]

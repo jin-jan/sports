@@ -1,0 +1,16 @@
+{% extends parent_template|default:"tournament/base.html" %}
+
+
+{% block content %}
+<article>
+  <header>
+    <h2><a href="{{ tour.get_absolute_url }}">{{ tour.name|title }}</a></h2>
+    <p>
+      <time datetime="{{ tour.event_date|date:"d-m-Y" }}">
+        {{ tour.event_date|date:"l, F j, Y" }}
+      </time>
+    </p>
+  </header>
+  {{ tour.description|linebreaks }}
+</<article>
+{% endblock %}

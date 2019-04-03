@@ -1,0 +1,15 @@
+{% extends parent_template|default:"tournament/base.html" %}
+
+{% block content %}
+{% for tour in tour_list %}
+  <div class="tour">
+    <h2><a href="{{ tour.get_absolute_url }}">{{tour.name}}</a></h2>
+        <div class="event_date">
+          <p>Fecha: {{tour.event_date}}</p>
+        </div>
+        <div class="location">
+          <p>Lugar: {{tour.city}}</p>
+        </div>
+  </div>
+{% endfor %}
+{% endblock %}

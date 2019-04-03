@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from tournament.routers import urlpatterns as tournament_api_urls
 from tournament import urls as tournament_urls
+api_urls = tournament_api_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(tournament_urls)),
+    path('api/v1/', include(api_urls)),
+    path("", include(tournament_urls)),
 ]
